@@ -50,6 +50,7 @@ class TodoController extends Controller
         $todo = new Todo;
         $todo->title = $request->title;
         $todo->body = $request->body;
+        $todo->user_id = Auth::id();
         $todo->save();
 
         return redirect()
